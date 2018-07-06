@@ -1,6 +1,8 @@
 body, html {
     margin: 0;
     padding: 0;
+    background-color: black;
+    color: aliceblue;
 }
 
 h1 {
@@ -27,5 +29,14 @@ header {
 
 .toggleBtn{
     width: 200px;
-    height: 55px;
+    height: 70px;
+    white-space: normal;
+}
+
+button{
+    margin: 10px;
+}
+
+input{
+    margin: 10px;
 }
