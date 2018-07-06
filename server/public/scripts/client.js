@@ -13,6 +13,10 @@ app.controller('KoalaController', ['$http', function ($http) {
         }).then(function (response) {
             console.log('made it to POST', response);
             self.getKoalas();
+            self.newKoala.name = '';
+            self.newKoala.gender = '';
+            self.newKoala.age = '';
+            self.newKoala.notes = '';
         }).catch(function (error) {
             console.log('error in POST', error);
         })

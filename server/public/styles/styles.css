@@ -24,3 +24,8 @@ header {
     max-width: 780px;
     margin: 0 auto;
 }
+
+.toggleBtn{
+    width: 200px;
+    height: 55px;
+}
