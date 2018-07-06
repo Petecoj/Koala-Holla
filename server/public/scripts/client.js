@@ -32,15 +32,32 @@ app.controller('KoalaController', ['$http', function ($http) {
     }
     self.deleteKoala = function (id) {
         console.log('id of pet to delete', id);
-        $http({
-            url: `/koala/${id}`,
-            method: 'DELETE'
-        }).then(function (response) {
-            self.getKoalas();
-            console.log(response);
-        }).catch(function (error) {
-            console.log('error response', error);
-        })
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this koala!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("Your koala has been sent to live on a farm", {
+                icon: "success",
+              });
+              $http({
+                url: `/koala/${id}`,
+                method: 'DELETE'
+            }).then(function (response) {
+                self.getKoalas();
+                console.log(response);
+            }).catch(function (error) {
+                console.log('error response', error);
+            })
+            } else {
+              swal("Your koala lives to see another day!");
+            }
+          });
+      
     }
 
     self.readyToTransfer = function(koala){
@@ -56,6 +73,7 @@ app.controller('KoalaController', ['$http', function ($http) {
             console.log('error in PUT', error);
             
         })
+      
     } 
 
     self.getKoalas()
