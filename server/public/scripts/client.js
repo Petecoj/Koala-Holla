@@ -64,7 +64,7 @@ app.controller('KoalaController', ['$http', function ($http) {
         $http({
             url: `/koala/${koala._id}`,
             method: 'PUT',
-            data: {ready_to_transfer: true}
+            data: {ready_to_transfer: !koala.ready_to_transfer}
         }).then(function(response){
             console.log('PUT', response);
             self.getKoalas();

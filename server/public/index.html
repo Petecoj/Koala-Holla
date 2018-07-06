@@ -56,7 +56,11 @@
           <td>{{koala.ready_to_transfer}}</td>
           <td>{{koala.notes}}</td>
           <td><button ng-click="vm.deleteKoala(koala._id)">Delete</button></td>
-          <td><button ng-if="!koala.ready_to_transfer" ng-click="vm.readyToTransfer(koala)">Ready To Transfer</button></td>
+          <td>
+            <button ng-if="!koala.ready_to_transfer" ng-click="vm.readyToTransfer(koala)">Ready To Transfer</button>
+            <button ng-if="koala.ready_to_transfer" ng-click="vm.readyToTransfer(koala)">Wait actually we want to keep this Koala</button>
+          </td>
+          
         </tr>
 
       </tbody>
