@@ -23,7 +23,17 @@ router.post('/', (req, res)=>{
     }).catch( (error)=> {
         console.log(error);
         res.sendStatus(500);
-    })
-})
+    });
+});
+
+router.delete('/:id', (req, res) => {
+    Koala.findByIdAndRemove({
+        _id : req.params._id
+    }).then( (responseFromMongoDB) => {
+        console.log(responseFromMongoDB);
+
+        res.sendStatus(200);
+    });
+});
 
 module.exports = router;
