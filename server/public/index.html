@@ -48,12 +48,14 @@
       </thead>
       <tbody>
         <tr ng-repeat="koala in vm.koalas">
-          <td>{{koala.id}}</td>
+          <td>{{koala._id}}</td>
           <td>{{koala.name}}</td>
           <td>{{koala.gender}}</td>
           <td>{{koala.age}}</td>
           <td>{{koala.readyToTransfer}}</td>
           <td>{{koala.notes}}</td>
+          <td><button ng-click="vm.deleteKoala(koala._id)">Delete</button></td>
+
         </tr>
 
       </tbody>

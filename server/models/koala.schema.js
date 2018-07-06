@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let koalaSchema = new Schema({
-    id: {type: Number, required: true, unique: true},
+    id: {type: Number, required: true},
     name: {type: String, required: true},
     gender: {type: String, required: true},
     age: {type: Number},
