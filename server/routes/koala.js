@@ -36,4 +36,19 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+router.put('/:id', (req, res)=>{
+    console.log('in put');
+    Koala.findByIdAndUpdate({
+        _id: req.params.id
+    },{
+        $set: {ready_to_transfer: req.body.ready_to_transfer}
+    }).then((responseFromMongo)=>{
+        console.log(responseFromMongo);
+        res.sendStatus(200);
+    }).catch((error)=>{
+        console.log(error);
+        res.sendStatus(404);
+    })
+})
+
 module.exports = router;
