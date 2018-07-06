@@ -1,29 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Koala Holla</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="vendors/angular.min.js" charset="utf-8"></script>
-    <script src="scripts/client.js" charset="utf-8"></script>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <img src="images/icon.png" class="icon" />
-        <h1>Koala Holla</h1>
-        <h3>1976 Llama Comma Drive</h2>
+
+<head>
+  <meta charset="utf-8">
+  <title>Koala Holla</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="vendors/angular.min.js" charset="utf-8"></script>
+  <script src="scripts/client.js" charset="utf-8"></script>
+</head>
+
+<body ng-app="KoalaApp">
+  <div class="container" ng-controller="KoalaController as vm">
+    <header>
+      <img src="images/icon.png" class="icon" />
+      <h1>Koala Holla</h1>
+      <h3>1976 Llama Comma Drive</h2>
         <h3>Walla Walla, WA</h2>
-      </header>
-      <br>
-      <br>
-      <h2>Add Koala</h2>
-      <!-- input fields -->
-      <br>
-      <hr>
-      <br>
-      <h2>All Koalas</h2>
-      <!-- table of koalas -->
+    </header>
+    <br>
+    <br>
+    <h2>Add Koala</h2>
+    <!-- input fields  -->
+    <div>
+      <input ng-model="vm.newKoala.id" type="text" placeholder="ID">
+      <input ng-model="vm.newKoala.name" type="text" placeholder="Name">
+      <input ng-model="vm.newKoala.gender" type="text" placeholder="Gender">
+      <input ng-model="vm.newKoala.age" type="number" placeholder="Age">
+      <input ng-model="vm.newKoala.notes" type="text" placeholder="Notes">
+      <button ng-click="vm.addKoala(vm.newKoala)">ADD KOALA!</button>
+
     </div>
-  </body>
+    <br>
+    <hr>
+    <br>
+    <h2>All Koalas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Ready To Transfer</th>
+          <th>Notes</th>
+          <th>Delete?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="koala in koalas">
+          <td>{{koala.id}}</td>
+          <td>{{koala.name}}</td>
+          <td>{{koala.gender}}</td>
+          <td>{{koala.age}}</td>
+          <td>{{koala.readyToTransfer}}</td>
+          <td>{{koala.notes}}</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+  </div>
+</body>
+
 </html>
