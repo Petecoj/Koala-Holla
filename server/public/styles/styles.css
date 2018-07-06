@@ -9,13 +9,15 @@ h1 {
 }
 
 header {
-    height: 150px;
+    height: 200px;
+    background-color: rgb(77, 117, 236);
 }
 
 .icon {
     float: left; margin: 0px 15px 15px 0px;
     width: 150px;
     height: 150px;
+    margin: 20px;
 }
 
 .container {
