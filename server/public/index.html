@@ -43,6 +43,7 @@
           <th>Ready To Transfer</th>
           <th>Notes</th>
           <th>Delete?</th>
+          <th>Mark for Transfer</th>
         </tr>
       </thead>
       <tbody>
@@ -51,10 +52,10 @@
           <td>{{koala.name}}</td>
           <td>{{koala.gender}}</td>
           <td>{{koala.age}}</td>
-          <td>{{koala.readyToTransfer}}</td>
+          <td>{{koala.ready_to_transfer}}</td>
           <td>{{koala.notes}}</td>
           <td><button ng-click="vm.deleteKoala(koala._id)">Delete</button></td>
-
+          <td><button ng-click="vm.readyToTransfer(koala)">Ready To Transfer</button></td>
         </tr>
 
       </tbody>

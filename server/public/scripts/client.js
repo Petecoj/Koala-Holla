@@ -43,5 +43,20 @@ app.controller('KoalaController', ['$http', function ($http) {
         })
     }
 
+    self.readyToTransfer = function(koala){
+        $http({
+            url: `/koala/${koala._id}`,
+            method: 'PUT',
+            data: {ready_to_transfer: true}
+        }).then(function(response){
+            console.log('PUT', response);
+            self.getKoalas();
+
+        }).catch(function(error){
+            console.log('error in PUT', error);
+            
+        })
+    } 
+
     self.getKoalas()
 }])
