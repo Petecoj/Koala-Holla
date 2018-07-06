@@ -17,7 +17,7 @@ router.post('/', (req, res)=>{
     console.log('got to koalas post');
     let newKoala = new Koala(req.body);
 
-    newPet.save().then( (data)=>{
+    newKoala.save().then( (data)=>{
         console.log(data);
         res.sendStatus(201);
     }).catch( (error)=> {
