@@ -24,10 +24,10 @@
     <h2>Add Koala</h2>
     <!-- input fields  -->
     <div>
-      <input class="form-control" ng-model="vm.newKoala.name" type="text" placeholder="Name">
-      <input class="form-control" ng-model="vm.newKoala.gender" type="text" placeholder="Gender">
-      <input class="form-control" ng-model="vm.newKoala.age" type="number" placeholder="Age">
-      <input class="form-control" ng-model="vm.newKoala.notes" type="text" placeholder="Notes">
+      <input class="form-control form-group-row" ng-model="vm.newKoala.name" type="text" placeholder="Name">
+      <input class="form-control form-group-row" ng-model="vm.newKoala.gender" type="text" placeholder="Gender">
+      <input class="form-control form-group-row" ng-model="vm.newKoala.age" type="number" placeholder="Age">
+      <input class="form-control form-group-row" ng-model="vm.newKoala.notes" type="text" placeholder="Notes">
       <button class="btn btn-secondary" ng-click="vm.addKoala(vm.newKoala)">ADD KOALA!</button>
 
     </div>
@@ -35,17 +35,17 @@
     <hr>
     <br>
     <h2>All Koalas</h2>
-    <table class="table table-hover">
+    <table class="table table-hover table-striped">
       <thead>
         <tr>
           <th>ID</th>
           <th>Name</th>
           <th>Gender</th>
           <th>Age</th>
-          <th>Ready To Transfer</th>
           <th>Notes</th>
           <th>Delete?</th>
-          <th>Mark for Transfer</th>
+          <th>Transfer Status</th>
+          <th>Ready To Transfer</th>
         </tr>
       </thead>
       <tbody>
@@ -54,13 +54,13 @@
           <td>{{koala.name}}</td>
           <td>{{koala.gender}}</td>
           <td>{{koala.age}}</td>
-          <td>{{koala.ready_to_transfer}}</td>
           <td>{{koala.notes}}</td>
           <td><button class="btn btn-secondary" ng-click="vm.deleteKoala(koala._id)">Delete</button></td>
           <td>
-            <button class="toggleBtn btn btn-secondary" ng-if="!koala.ready_to_transfer" ng-click="vm.readyToTransfer(koala)">Ready To Transfer</button>
-            <button class="toggleBtn btn btn-secondary" ng-if="koala.ready_to_transfer" ng-click="vm.readyToTransfer(koala)">Wait actually we want to keep this Koala</button>
+            <button class="toggleBtn btn btn-secondary" ng-if="!koala.ready_to_transfer" ng-click="vm.readyToTransfer(koala)">Not Ready</button>
+            <button class="toggleBtn btn btn-secondary" ng-if="koala.ready_to_transfer" ng-click="vm.readyToTransfer(koala)">Ready</button>
           </td>
+          <td>{{koala.ready_to_transfer}}</td>
           
         </tr>
 

@@ -1,8 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    background-color: black;
-    color: aliceblue;
+    background-color: blanchedalmond;
 }
 
 h1 {
@@ -28,8 +27,8 @@ header {
 }
 
 .toggleBtn{
-    width: 200px;
-    height: 70px;
+    width: 150px;
+    height: 50px;
     white-space: normal;
 }
 
