@@ -33,7 +33,7 @@ app.controller('KoalaController', ['$http', function ($http) {
     self.deleteKoala = function (id) {
         console.log('id of pet to delete', id);
         $http({
-            url: `/koalas/${id}`,
+            url: `/koala/${id}`,
             method: 'DELETE'
         }).then(function (response) {
             self.getKoalas();

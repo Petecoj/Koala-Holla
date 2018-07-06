@@ -28,7 +28,7 @@ router.post('/', (req, res)=>{
 
 router.delete('/:id', (req, res) => {
     Koala.findByIdAndRemove({
-        _id : req.params._id
+        _id : req.params.id
     }).then( (responseFromMongoDB) => {
         console.log(responseFromMongoDB);
 
