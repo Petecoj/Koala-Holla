@@ -18,6 +18,7 @@ app.controller('KoalaController', ['$http', function ($http) {
             self.newKoala.age = '';
             self.newKoala.notes = '';
         }).catch(function (error) {
+           
             console.log('error in POST', error);
         })
     }
@@ -79,6 +80,7 @@ app.controller('KoalaController', ['$http', function ($http) {
         })
       
     } 
+
 
     self.getKoalas()
 }])
