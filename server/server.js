@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 5000;
 
 
 const mongoose = require('mongoose');
-const databaseUrl = 'mongodb://localhost:27017/koalaholla'
+const databaseUrl = process.env.MONGODB_URI ||'mongodb://localhost:27017/koalaholla'
 // Configure body-parser for Angular and jQuery
 
 mongoose.connect(databaseUrl);
